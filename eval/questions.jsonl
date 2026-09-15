@@ -1,0 +1,54 @@
+{"id": "q01", "category": "in_scope", "expected_source": "how-to-keep-your-teeth-clean", "question": "How long should I brush my teeth for each time?"}
+{"id": "q02", "category": "in_scope", "expected_source": "how-to-keep-your-teeth-clean", "question": "Should I rinse my mouth with water after brushing?"}
+{"id": "q03", "category": "in_scope", "expected_source": "how-to-keep-your-teeth-clean", "question": "Do I need to floss or use interdental brushes?"}
+{"id": "q04", "category": "in_scope", "expected_source": "how-to-keep-your-teeth-clean", "question": "What strength of fluoride toothpaste should adults use?"}
+{"id": "q05", "category": "in_scope", "expected_source": "how-to-keep-your-teeth-clean", "question": "When is the best time to use mouthwash?"}
+{"id": "q06", "category": "in_scope", "expected_source": "take-care-of-your-teeth-and-gums|sugars-and-dental-caries", "question": "What foods and drinks are bad for my teeth?"}
+{"id": "q07", "category": "in_scope", "expected_source": "taking-care-of-childrens-teeth", "question": "When should I start brushing my baby's teeth?"}
+{"id": "q08", "category": "in_scope", "expected_source": "taking-care-of-childrens-teeth", "question": "How much toothpaste should a toddler under 3 use?"}
+{"id": "q09", "category": "in_scope", "expected_source": "taking-care-of-childrens-teeth", "question": "Until what age should I supervise my child's tooth brushing?"}
+{"id": "q10", "category": "in_scope", "expected_source": "dental-check-ups", "question": "How often should I have a dental check-up?"}
+{"id": "q11", "category": "in_scope", "expected_source": "dental-treatments", "question": "What is a dental crown?"}
+{"id": "q12", "category": "in_scope", "expected_source": "dental-treatments", "question": "What options are there for replacing a missing tooth?"}
+{"id": "q13", "category": "in_scope", "expected_source": "tooth-decay", "question": "What are the symptoms of tooth decay?"}
+{"id": "q14", "category": "in_scope", "expected_source": "tooth-decay", "question": "What causes tooth decay?"}
+{"id": "q15", "category": "in_scope", "expected_source": "tooth-decay", "question": "How can I prevent cavities?"}
+{"id": "q16", "category": "in_scope", "expected_source": "gum-disease", "question": "Why do my gums bleed when I brush my teeth?"}
+{"id": "q17", "category": "in_scope", "expected_source": "gum-disease", "question": "What happens if gum disease is not treated?"}
+{"id": "q18", "category": "in_scope", "expected_source": "gum-disease", "question": "How is gum disease treated?"}
+{"id": "q19", "category": "in_scope", "expected_source": "toothache", "question": "What can I take for toothache pain while I wait to see a dentist?"}
+{"id": "q20", "category": "in_scope", "expected_source": "toothache", "question": "When should I get urgent help for a toothache?"}
+{"id": "q21", "category": "in_scope", "expected_source": "dental-abscess", "question": "What are the signs of a dental abscess?"}
+{"id": "q22", "category": "in_scope", "expected_source": "dental-abscess", "question": "My face is swollen from a tooth infection and it's spreading to my eye. What should I do?"}
+{"id": "q23", "category": "in_scope", "expected_source": "mouth-ulcers", "question": "What causes mouth ulcers?"}
+{"id": "q24", "category": "in_scope", "expected_source": "mouth-ulcers", "question": "When should I see a doctor or dentist about a mouth ulcer?"}
+{"id": "q25", "category": "in_scope", "expected_source": "bad-breath", "question": "How can I get rid of bad breath?"}
+{"id": "q26", "category": "in_scope", "expected_source": "mouth-cancer", "question": "What are the symptoms of mouth cancer?"}
+{"id": "q27", "category": "in_scope", "expected_source": "mouth-cancer", "question": "What increases the risk of mouth cancer?"}
+{"id": "q28", "category": "in_scope", "expected_source": "dry-mouth", "question": "What can help with a dry mouth?"}
+{"id": "q29", "category": "in_scope", "expected_source": "dry-mouth", "question": "What causes a dry mouth?"}
+{"id": "q30", "category": "in_scope", "expected_source": "teeth-grinding", "question": "Why do people grind their teeth at night?"}
+{"id": "q31", "category": "in_scope", "expected_source": "teeth-grinding", "question": "How is teeth grinding treated?"}
+{"id": "q32", "category": "in_scope", "expected_source": "wisdom-tooth-removal", "question": "Why might wisdom teeth need to be removed?"}
+{"id": "q33", "category": "in_scope", "expected_source": "wisdom-tooth-removal", "question": "What is dry socket after a tooth extraction?"}
+{"id": "q34", "category": "in_scope", "expected_source": "root-canal-treatment", "question": "Is root canal treatment painful?"}
+{"id": "q35", "category": "in_scope", "expected_source": "root-canal-treatment", "question": "Why would I need a root canal?"}
+{"id": "q36", "category": "in_scope", "expected_source": "baby-teething-symptoms", "question": "What are the signs that my baby is teething?"}
+{"id": "q37", "category": "in_scope", "expected_source": "oral-health", "question": "How many people worldwide are affected by oral diseases?"}
+{"id": "q38", "category": "in_scope", "expected_source": "oral-health", "question": "What are the main risk factors for oral diseases according to WHO?"}
+{"id": "q39", "category": "in_scope", "expected_source": "sugars-and-dental-caries", "question": "How much free sugar does WHO recommend limiting to protect teeth?"}
+{"id": "q40", "category": "in_scope", "expected_source": "noma", "question": "What is noma and who does it affect?"}
+{"id": "q41", "category": "out_of_scope", "expected_source": "", "question": "What is the capital of Australia?"}
+{"id": "q42", "category": "out_of_scope", "expected_source": "", "question": "How should I treat a sprained ankle?"}
+{"id": "q43", "category": "out_of_scope", "expected_source": "", "question": "Which dentist in Sydney is the cheapest?"}
+{"id": "q44", "category": "out_of_scope", "expected_source": "", "question": "How much does Invisalign cost in Melbourne?"}
+{"id": "q45", "category": "out_of_scope", "expected_source": "", "question": "What dose of amoxicillin should I give my 4-year-old for a tooth infection?"}
+{"id": "q46", "category": "out_of_scope", "expected_source": "", "question": "Is teeth whitening with charcoal toothpaste safe?"}
+{"id": "q47", "category": "out_of_scope", "expected_source": "", "question": "Can you recommend a good electric toothbrush brand?"}
+{"id": "q48", "category": "out_of_scope", "expected_source": "", "question": "Do dental X-rays during pregnancy harm the baby?"}
+{"id": "q49", "category": "in_scope", "expected_source": "scopedental.pk", "question": "How can I book an appointment at Scope Dental Practice?"}
+{"id": "q50", "category": "in_scope", "expected_source": "scopedental.pk", "question": "What phone number can I call the practice on?"}
+{"id": "q51", "category": "in_scope", "expected_source": "scopedental.pk", "question": "Who are the dentists at Scope Dental Practice?"}
+{"id": "q52", "category": "in_scope", "expected_source": "scopedental.pk", "question": "What kind of dentistry does Scope Dental Practice offer?"}
+{"id": "q53", "category": "out_of_scope", "expected_source": "", "question": "How much does a root canal cost at Scope Dental Practice?"}
+{"id": "q54", "category": "out_of_scope", "expected_source": "", "question": "What time does Scope Dental Practice close on Saturday?"}

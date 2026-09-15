@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* Scope Dental Practice palette: near-black and champagne gold on warm ivory. */
+:root {
+  --bg: #f8f6f1;
+  --surface: #ffffff;
+  --surface-2: #fbfaf6;
+  --subtle: #f1ede4;
+  --border: #e7e1d4;
+  --border-strong: #d6cdb9;
+  --text: #15130f;
+  --muted: #6d665a;
+  --accent: #b8923f;
+  --accent-strong: #7a5c22;
+  --accent-soft: #f4ecdb;
+  --on-accent: #15130f;
+  --warn: #8a5300;
+  --warn-soft: #fcf1de;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --ok: #16a34a;
+  --mesh-1: rgba(200, 164, 90, 0.2);
+  --mesh-2: rgba(13, 13, 13, 0.05);
+  --dot: rgba(21, 19, 15, 0.06);
+  --shadow: 0 1px 2px rgba(21, 19, 15, 0.04), 0 10px 30px -14px rgba(21, 19, 15, 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161512;
+    --surface-2: #1a1915;
+    --subtle: #211f1a;
+    --border: #2c2922;
+    --border-strong: #3d392f;
+    --text: #efe9dc;
+    --muted: #a39b8a;
+    --accent: #c8a45a;
+    --accent-strong: #e4c98f;
+    --accent-soft: #2b2417;
+    --on-accent: #0d0d0d;
+    --warn: #f3b64f;
+    --warn-soft: #33260e;
+    --danger: #f97066;
+    --danger-soft: #3a1714;
+    --ok: #4ade80;
+    --mesh-1: rgba(200, 164, 90, 0.12);
+    --mesh-2: rgba(200, 164, 90, 0.04);
+    --dot: rgba(239, 233, 220, 0.045);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -16px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ok: var(--ok);
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-garamond), ui-serif, Georgia, serif;
+  --shadow-card: var(--shadow);
+}
+
+@theme {
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Soft gold glow + fading dot grid behind the whole app */
+.app-backdrop {
+  background:
+    radial-gradient(44rem 28rem at 8% -10%, var(--mesh-1), transparent 70%),
+    radial-gradient(38rem 26rem at 100% 0%, var(--mesh-2), transparent 70%);
+}
+.app-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, black, transparent 60%);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--subtle) 0%, var(--border-strong) 50%, var(--subtle) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

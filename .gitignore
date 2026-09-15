@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.gradio/
+data/raw/
+eval/results/*.partial.jsonl
