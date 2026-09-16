@@ -1,0 +1,6 @@
+# Never upload local env files (including the examples) with a `vercel deploy` from this folder.
+# Production values are set in the Vercel project settings instead.
+.env*
+.vercel
+node_modules
+.next
