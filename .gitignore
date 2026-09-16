@@ -6,3 +6,4 @@ venv/
 .gradio/
 data/raw/
 eval/results/*.partial.jsonl
+~$*
