@@ -5,12 +5,12 @@ name: gemini-flash
 description: Gemini Flash (OpenAI-compatible endpoint), hybrid + rerank retrieval.
 llm:
   provider: gemini
-  model: gemini-2.5-flash
+  model: gemini-3.6-flash
   seed: null
 # A different (newer) model judges groundedness to reduce self-preference bias.
 judge_llm:
   provider: gemini
-  model: gemini-2.5-flash-lite
+  model: gemini-3.5-flash
   temperature: 0.0
   max_tokens: 2500
   seed: null

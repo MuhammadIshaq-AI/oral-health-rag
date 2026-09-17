@@ -53,6 +53,15 @@ class RetrievalConfig(BaseModel):
     include_secondary: bool = True  # WHO (non-Australian) sources
 
 
+class ValidationConfig(BaseModel):
+    """How strictly generated answers are checked before they reach the user."""
+
+    #: Share of factual sentences that must carry a citation. Large models manage
+    #: ~1.0; small local models cite the main claims but skip short bullets, so a
+    #: lower bar keeps their answers usable without dropping the citation rule.
+    min_citation_coverage: float = 0.8
+
+
 class TriageConfig(BaseModel):
     """Safety layer options."""
 
@@ -70,6 +79,7 @@ class ExperimentConfig(BaseModel):
     llm: LLMConfig = Field(default_factory=LLMConfig)
     judge_llm: LLMConfig | None = None  # eval judge; defaults to `llm`
     triage: TriageConfig = Field(default_factory=TriageConfig)
+    validation: ValidationConfig = Field(default_factory=ValidationConfig)
     rewrite_queries: bool = True
     max_history_turns: int = 6
 

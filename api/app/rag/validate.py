@@ -150,8 +150,22 @@ def validate_answer(text: str, n_passages: int, min_coverage: float = 0.8) -> Va
 
 
 CORRECTIVE_NOTE = (
-    "Your previous answer broke the rules: {problems}. Rewrite it. Use only the passages, put a "
-    "citation like [1] on every factual sentence, do not diagnose, do not mention prescription "
-    "medicines or doses, and end with the disclaimer line. If the passages do not answer the "
-    "question, give the exact no-guidance reply."
+    "Your previous answer broke the rules: {problems}. Rewrite it, keeping the same facts. "
+    "Use only the passages, do not diagnose, do not mention prescription medicines or doses, "
+    "and end with the disclaimer line.{uncited}"
 )
+UNCITED_NOTE = (
+    "\nThese sentences had no citation — add the passage number(s) they came from, like [1], "
+    "at the end of each:\n{sentences}"
+    "\nIf that is hard, drop the bullet list and write 3 to 5 plain sentences instead, each one "
+    "ending with its passage number before the full stop."
+)
+
+
+def corrective_note(result: ValidationResult) -> str:
+    """Retry instruction naming the exact problems (and sentences) to fix."""
+    uncited = ""
+    if result.uncited_sentences:
+        listed = "\n".join(f"- {s}" for s in result.uncited_sentences[:8])
+        uncited = UNCITED_NOTE.format(sentences=listed)
+    return CORRECTIVE_NOTE.format(problems=", ".join(result.flags), uncited=uncited)

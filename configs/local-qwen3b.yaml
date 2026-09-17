@@ -1,0 +1,21 @@
+# Small local model that still follows the citation rules: Qwen2.5 3B Instruct
+# via Ollama. Fully offline (no API keys) and fits alongside the embedder,
+# reranker and Whisper on a 6 GB GPU.
+extends: default.yaml
+name: local-qwen2.5-3b
+description: Qwen2.5 3B Instruct via Ollama, hybrid + rerank retrieval.
+llm:
+  provider: ollama
+  model: qwen2.5:3b-instruct
+  max_tokens: 600
+  timeout_s: 180
+judge_llm:
+  provider: ollama
+  model: qwen2.5:3b-instruct
+  temperature: 0.0
+  max_tokens: 2000
+  timeout_s: 300
+triage:
+  use_model: false   # a 3B model mislabels ordinary questions as emergencies; rules only
+validation:
+  min_citation_coverage: 0.6   # this model cites main claims but skips short bullets

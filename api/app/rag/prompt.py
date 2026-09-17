@@ -9,6 +9,7 @@ from app.llm.base import Message
 from app.rag.types import Hit
 
 PROMPTS_DIR = ROOT / "prompts"
+BASE_VERSION = "v1"  # every prompt exists at this version
 
 DISCLAIMER = "This is general information, not dental advice."
 NO_GUIDANCE = (
@@ -25,11 +26,11 @@ def load_prompt(name: str, version: str) -> str:
     system prompt for very small local models but reuses the rest. Missing files
     therefore fall back to the base version (`v1s` → `v1`).
     """
-    path = PROMPTS_DIR / f"{name}_{version}.md"
-    if not path.exists():
-        base = version.rstrip("abcdefghijklmnopqrstuvwxyz") or "v1"
-        path = PROMPTS_DIR / f"{name}_{base}.md"
-    return path.read_text(encoding="utf-8").strip()
+    for candidate in (version, version.rstrip("abcdefghijklmnopqrstuvwxyz"), BASE_VERSION):
+        path = PROMPTS_DIR / f"{name}_{candidate}.md"
+        if candidate and path.exists():
+            return path.read_text(encoding="utf-8").strip()
+    raise FileNotFoundError(f"No prompt '{name}' for version '{version}' (or '{BASE_VERSION}')")
 
 
 def format_passages(hits: list[Hit]) -> str:

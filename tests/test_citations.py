@@ -71,3 +71,13 @@ def test_exempt_sentences_do_not_need_citations() -> None:
 
 def test_split_sentences_handles_bullets() -> None:
     assert len(split_sentences("Steps:\n- Hold the crown [1].\n- Store in milk [1].")) == 3
+
+
+def test_prompt_version_fallback() -> None:
+    """A version may override only some prompts; the rest fall back to v1."""
+    from app.rag.prompt import load_prompt
+
+    assert load_prompt("system", "v2") != load_prompt("system", "v1")  # v2 exists
+    assert load_prompt("triage", "v2") == load_prompt("triage", "v1")  # falls back
+    assert load_prompt("rewrite", "v1s") == load_prompt("rewrite", "v1")
+    assert "NO_ANSWER" in load_prompt("system", "v1s")

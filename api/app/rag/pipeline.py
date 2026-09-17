@@ -11,7 +11,7 @@ from app.rag.prompt import DISCLAIMER, NO_GUIDANCE, build_answer_messages
 from app.rag.retriever import Retriever
 from app.rag.rewrite import rewrite_query
 from app.rag.types import Hit
-from app.rag.validate import CORRECTIVE_NOTE, ValidationResult, validate_answer
+from app.rag.validate import ValidationResult, corrective_note, validate_answer
 
 
 @dataclass
@@ -95,7 +95,9 @@ class RagPipeline:
                 out = await self.llm.generate(
                     messages, temperature=cfg.llm.temperature, max_tokens=cfg.llm.max_tokens
                 )
-                result = validate_answer(out.text, len(retrieval.hits))
+                result = validate_answer(
+                    out.text, len(retrieval.hits), cfg.validation.min_citation_coverage
+                )
                 flags.extend(f"attempt{attempt + 1}:{f}" for f in result.flags)
                 base.attempts = attempt + 1
                 if not result.hard_fail:
@@ -105,7 +107,7 @@ class RagPipeline:
                     {"role": "assistant", "content": out.text},
                     {
                         "role": "user",
-                        "content": CORRECTIVE_NOTE.format(problems=", ".join(result.flags)),
+                        "content": corrective_note(result),
                     },
                 ]
         latency["generate"] = t.ms

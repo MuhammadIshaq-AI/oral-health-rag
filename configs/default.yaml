@@ -1,7 +1,7 @@
 # Reproducible default: everything runs locally (Ollama + local embeddings/reranker).
 name: default-local
 description: Local Qwen2.5-7B-Instruct via Ollama, hybrid BM25+dense retrieval with bge-reranker-v2-m3.
-prompt_version: v1
+prompt_version: v2
 rewrite_queries: true
 max_history_turns: 6
 retrieval:
