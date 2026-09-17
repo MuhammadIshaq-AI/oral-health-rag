@@ -43,8 +43,8 @@ class FakeTTS:
 @pytest.fixture
 def client():
     app.state.tts = FakeTTS()
-    with TestClient(app) as c:  # lifespan is fine: TTS does not need the RAG state
-        yield c
+    # No `with`: skipping lifespan keeps the retriever and its models out of this test.
+    yield TestClient(app)
     app.state.tts = None
 
 
