@@ -1,4 +1,4 @@
-"""FastAPI application: chat, speech-to-text, sessions/consent, health."""
+"""FastAPI application: chat, speech-to-text, text-to-speech, sessions/consent, health."""
 
 from __future__ import annotations
 
@@ -11,6 +11,9 @@ from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import Response
+from fastapi.websockets import WebSocketState
+from pydantic import BaseModel, Field
 
 from app import __version__
 from app.config import enable_system_tls, get_settings
@@ -159,4 +162,30 @@ async def transcribe_stream(ws: WebSocket) -> None:
     await ws.accept()
     engine = await asyncio.to_thread(stt_engine, ws)
     await stream_session(ws, engine)
-    await ws.close()
+    if ws.client_state == WebSocketState.CONNECTED:
+        await ws.close()  # the client often closes first; closing twice raises
+
+
+# ---- Text-to-speech -----------------------------------------------------------
+class TTSIn(BaseModel):
+    """Text to speak."""
+
+    text: str = Field(min_length=1, max_length=4000)
+
+
+@app.post("/api/tts", response_class=Response)
+async def text_to_speech(body: TTSIn, request: Request) -> Response:
+    """Synthesise speech locally with Piper (disabled when TTS_ENABLED=false)."""
+    if not get_settings().tts_enabled:
+        raise HTTPException(status_code=404, detail="TTS is disabled")
+    tts = getattr(request.app.state, "tts", None)
+    try:
+        if tts is None:
+            from app.tts.piper import get_tts
+
+            tts = request.app.state.tts = await asyncio.to_thread(get_tts)
+        wav = await asyncio.to_thread(tts.synthesize, body.text)
+    except Exception as exc:  # voice missing / piper not installed
+        log.exception("TTS failed")
+        raise HTTPException(status_code=503, detail=f"TTS unavailable: {exc}") from exc
+    return Response(content=wav, media_type="audio/wav", headers={"Cache-Control": "no-store"})
