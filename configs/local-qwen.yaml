@@ -1,2 +1,19 @@
+# Default local model: Qwen2.5 7B Instruct (4-bit) via Ollama. Fully offline.
+# On a 6 GB GPU this shares VRAM with bge-m3, the reranker and Whisper, so expect
+# some CPU offload; drop to configs/local-qwen3b.yaml if answers are too slow.
 extends: default.yaml
 name: local-qwen2.5-7b
+description: Qwen2.5 7B Instruct (q4_K_M) via Ollama, hybrid + rerank retrieval.
+llm:
+  provider: ollama
+  model: qwen2.5:7b-instruct-q4_K_M
+  max_tokens: 700
+  timeout_s: 300
+judge_llm:
+  provider: ollama
+  model: qwen2.5:7b-instruct-q4_K_M
+  temperature: 0.0
+  max_tokens: 2500
+  timeout_s: 600
+validation:
+  min_citation_coverage: 0.6   # local models cite main claims but skip short bullets

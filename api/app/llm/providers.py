@@ -53,11 +53,17 @@ class OllamaClient:
     provider = "ollama"
 
     def __init__(
-        self, model: str, base_url: str, seed: int | None = 42, timeout_s: float = 300
+        self,
+        model: str,
+        base_url: str,
+        seed: int | None = 42,
+        timeout_s: float = 300,
+        keep_alive: str = "30m",
     ) -> None:
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.seed = seed
+        self.keep_alive = keep_alive
         self._http = httpx.AsyncClient(timeout=timeout_s)
 
     def _payload(
@@ -70,7 +76,13 @@ class OllamaClient:
         }
         if self.seed is not None:
             options["seed"] = self.seed
-        return {"model": self.model, "messages": messages, "options": options}
+        # Keep the weights resident: reloading a 7B model costs ~20s per request.
+        return {
+            "model": self.model,
+            "messages": messages,
+            "options": options,
+            "keep_alive": self.keep_alive,
+        }
 
     async def generate(
         self,
