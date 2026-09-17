@@ -54,6 +54,10 @@ class TurnLog(BaseModel):
     triage_source: str  # rules | model | rules+model
     triage_triggers: list[str] = Field(default_factory=list)
     triage_evidence: str | None = None
+    triage_rule_label: str | None = None
+    triage_model_label: str | None = None
+    triage_model_confidence: float | None = None
+    triage_model_error: str | None = None
     halted_by_triage: bool = False
 
     # Retrieval

@@ -45,18 +45,25 @@ class RagPipeline:
         self.llm = llm
         self.cfg = cfg
 
-    async def answer(self, question: str, history: list[Message]) -> RagAnswer:
-        """Answer a question from retrieved passages with enforced citations."""
+    async def answer(
+        self, question: str, history: list[Message], query_override: str | None = None
+    ) -> RagAnswer:
+        """Answer a question from retrieved passages with enforced citations.
+
+        `query_override` replaces the (rewritten) retrieval query, e.g. to target
+        first-aid passages for a triaged dental trauma turn.
+        """
         cfg = self.cfg
         latency: dict[str, float] = {}
         history = history[-cfg.max_history_turns * 2 :]
 
         with Timer() as t:
-            query = (
-                await rewrite_query(self.llm, question, history, cfg.prompt_version)
-                if cfg.rewrite_queries
-                else question
-            )
+            if query_override:
+                query = query_override
+            elif cfg.rewrite_queries:
+                query = await rewrite_query(self.llm, question, history, cfg.prompt_version)
+            else:
+                query = question
         latency["rewrite"] = t.ms
 
         with Timer() as t:

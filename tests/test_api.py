@@ -17,7 +17,7 @@ from app.telemetry.logger import ResearchLogger
 
 
 @pytest.fixture
-def client(retriever, tmp_path: Path):  # noqa: ANN001, ANN201
+def client(retriever, tmp_path: Path):
     import asyncio
 
     logger = ResearchLogger(tmp_path / "logs")
@@ -74,6 +74,34 @@ def test_no_consent_redacts_content(client: TestClient, tmp_path: Path) -> None:
     assert rec["consent"] is False
     assert rec["raw_input"] is None and rec["answer"] is None and rec["rewritten_query"] is None
     assert rec["retrieved"]  # non-content metrics are still kept
+
+
+def test_emergency_halts_before_rag(client: TestClient, tmp_path: Path) -> None:
+    sid = _session(client)
+    body = client.post(
+        "/api/chat", json={"session_id": sid, "message": "my face is swollen and I can't breathe"}
+    ).json()
+    assert body["triage"]["label"] == "emergency_airway" and body["triage"]["halted"]
+    assert "000" in body["answer"] and body["sources"] == []
+    assert any(a["href"] == "tel:000" for a in body["triage"]["actions"])
+    rec = _records(tmp_path)[-1]
+    assert rec["halted_by_triage"] and rec["retrieved"] == [] and rec["triage_triggers"]
+
+
+def test_crisis_redirects(client: TestClient) -> None:
+    sid = _session(client)
+    body = client.post("/api/chat", json={"session_id": sid, "message": "I want to die"}).json()
+    assert body["triage"]["severity"] == "crisis" and "13 11 14" in body["answer"]
+
+
+def test_avulsion_answers_from_corpus_with_banner(client: TestClient) -> None:
+    sid = _session(client)
+    body = client.post(
+        "/api/chat", json={"session_id": sid, "message": "my son's adult tooth got knocked out"}
+    ).json()
+    assert body["triage"]["label"] == "dental_trauma_avulsion" and not body["triage"]["halted"]
+    assert body["triage"]["message"] and body["sources"]
+    assert body["sources"][0]["chunk_id"] == "healthdirect-knocked-out-tooth#00"
 
 
 def test_validation_error(client: TestClient) -> None:

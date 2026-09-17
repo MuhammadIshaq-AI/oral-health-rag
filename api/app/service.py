@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import uuid
 from dataclasses import dataclass
 
@@ -11,7 +12,12 @@ from app.experiments import ExperimentConfig
 from app.llm.base import LLMClient, Message, Timer
 from app.rag.pipeline import RagAnswer, RagPipeline
 from app.rag.retriever import Retriever
-from app.schemas import ChatRequest, ChatResponse, SourceOut, TriageOut
+from app.safety.classifier import classify_model
+from app.safety.labels import HALTING
+from app.safety.responses import AVULSION_FALLBACK, AVULSION_QUERY, halted_message
+from app.safety.rules import classify_rules
+from app.safety.triage import TriageDecision, combine
+from app.schemas import ChatRequest, ChatResponse, SourceOut
 from app.telemetry.logger import ResearchLogger
 from app.telemetry.schema import RetrievedLog, TurnLog
 
@@ -53,6 +59,51 @@ def sources_from(answer: RagAnswer) -> list[SourceOut]:
     ]
 
 
+async def _triage_and_answer(
+    state: AppState, message: str, history: list[Message]
+) -> tuple[TriageDecision, RagAnswer | None]:
+    """Run safety triage before the dental flow, without paying for it in latency.
+
+    Rules run first (microseconds). If they already require halting, RAG never
+    starts. Otherwise the model second opinion runs *concurrently* with RAG; if the
+    model escalates to a halting label, the RAG result is discarded unseen.
+    """
+    cfg = state.cfg
+    with Timer() as t_rules:
+        rules = classify_rules(message)
+    use_model = cfg.triage.use_model and rules.label not in HALTING
+    model_task = (
+        asyncio.create_task(classify_model(state.llm, message, cfg.prompt_version))
+        if use_model
+        else None
+    )
+
+    rag_task: asyncio.Task[RagAnswer] | None = None
+    if rules.label not in HALTING:
+        if state.retriever is None:
+            if model_task:
+                model_task.cancel()
+            raise RuntimeError("No corpus index loaded. Run `make ingest` first.")
+        override = (
+            f"{AVULSION_QUERY}. {message}"
+            if rules.label == "dental_trauma_avulsion" and cfg.triage.corpus_first_aid
+            else None
+        )
+        pipeline = RagPipeline(state.retriever, state.llm, cfg)
+        rag_task = asyncio.create_task(pipeline.answer(message, history, query_override=override))
+
+    with Timer() as t_model:
+        model = await model_task if model_task else None
+    decision = combine(rules, model, t_rules.ms + (t_model.ms if model_task else 0.0))
+
+    if decision.halts:
+        if rag_task:
+            rag_task.cancel()
+        return decision, None
+    assert rag_task is not None
+    return decision, await rag_task
+
+
 async def handle_turn(state: AppState, req: ChatRequest) -> ChatResponse:
     """Run one user turn through the pipeline, log it, and build the response."""
     turn_id = uuid.uuid4().hex
@@ -62,27 +113,34 @@ async def handle_turn(state: AppState, req: ChatRequest) -> ChatResponse:
         latency["stt"] = req.stt.latency_ms
 
     with Timer() as total:
-        if state.retriever is None:
-            raise RuntimeError("No corpus index loaded. Run `make ingest` first.")
-        rag = await RagPipeline(state.retriever, state.llm, state.cfg).answer(req.message, history)
-        latency.update(rag.latency_ms)
-        triage = TriageOut(label="none", severity="none")
-        sources = sources_from(rag)
+        decision, rag = await _triage_and_answer(state, req.message, history)
+        latency["triage"] = decision.latency_ms
+        extra_flags: list[str] = []
+        answer, sources, refused = halted_message(decision.label), [], False
+        if rag is not None:
+            latency.update(rag.latency_ms)
+            answer, refused = rag.text, rag.refused
+            sources = [] if rag.refused else sources_from(rag)
+            if decision.label == "dental_trauma_avulsion" and rag.refused:
+                answer, refused = AVULSION_FALLBACK, False
+                extra_flags.append("avulsion_fallback_template")
     latency["total"] = total.ms + latency.get("stt", 0.0)
 
     response = ChatResponse(
         turn_id=turn_id,
-        answer=rag.text,
-        sources=sources if not rag.refused else [],
-        refused=rag.refused,
-        triage=triage,
-        rewritten_query=rag.rewritten_query,
+        answer=answer,
+        sources=sources,
+        refused=refused,
+        triage=decision.to_out(),
+        rewritten_query=rag.rewritten_query if rag else None,
         latency_ms={k: round(v, 1) for k, v in latency.items()},
-        model=rag.model,
+        model=state.llm.model,
         corpus_version=state.corpus_version or "",
         config_hash=state.cfg.config_hash,
     )
-    await state.logger.log_turn(build_turn_log(state, req, response, rag, triage_source="none"))
+    record = build_turn_log(state, req, response, rag, decision)
+    record.validation_flags.extend(extra_flags)
+    await state.logger.log_turn(record)
     return response
 
 
@@ -91,9 +149,7 @@ def build_turn_log(
     req: ChatRequest,
     resp: ChatResponse,
     rag: RagAnswer | None,
-    triage_source: str,
-    triage_triggers: list[str] | None = None,
-    triage_evidence: str | None = None,
+    decision: TriageDecision,
 ) -> TurnLog:
     """Assemble the research record for a turn."""
     stt = req.stt
@@ -111,9 +167,13 @@ def build_turn_log(
         audio_duration_s=stt.duration_s if stt else None,
         triage_label=resp.triage.label,
         triage_severity=resp.triage.severity,
-        triage_source=triage_source,
-        triage_triggers=triage_triggers or [],
-        triage_evidence=triage_evidence,
+        triage_source=decision.source,
+        triage_triggers=decision.triggers,
+        triage_evidence=decision.model_evidence,
+        triage_rule_label=decision.rule_label,
+        triage_model_label=decision.model_label,
+        triage_model_confidence=decision.model_confidence,
+        triage_model_error=decision.model_error,
         halted_by_triage=resp.triage.halted,
         rewritten_query=rag.rewritten_query if rag else None,
         retrieval_mode=state.cfg.retrieval.mode if rag else None,
@@ -123,7 +183,7 @@ def build_turn_log(
         answer=resp.answer,
         refused=resp.refused,
         citations_used=[s.chunk_id for s in resp.sources if s.cited],
-        validation_flags=rag.validation_flags if rag else [],
+        validation_flags=list(rag.validation_flags) if rag else [],
         generation_attempts=rag.attempts if rag else 0,
         provider=state.llm.provider,
         model=state.llm.model,

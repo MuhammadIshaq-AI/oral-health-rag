@@ -61,6 +61,7 @@ class TriageOut(BaseModel):
     label: str
     severity: Literal["none", "info", "urgent", "emergency", "crisis"]
     title: str | None = None
+    message: str | None = None
     actions: list[dict[str, str]] = Field(default_factory=list)
     halted: bool = False
 

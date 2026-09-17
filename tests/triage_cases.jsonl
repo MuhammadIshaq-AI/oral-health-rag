@@ -1,0 +1,120 @@
+{"id": "air-01", "text": "My face is swollen and I can't swallow properly", "label": "emergency_airway", "notes": "swelling + swallowing"}
+{"id": "air-02", "text": "my jaw is really swollen and its getting hard to breathe", "label": "emergency_airway", "notes": "STT style, no punctuation"}
+{"id": "air-03", "text": "Swelling under my tongue and I'm struggling to breathe", "label": "emergency_airway", "notes": "floor of mouth"}
+{"id": "air-04", "text": "tooth abscess, now my neck is swollen and it hurts to swallow", "label": "emergency_airway", "notes": ""}
+{"id": "air-05", "text": "My husband's cheek has blown up after a toothache and he's drooling and can't swallow", "label": "emergency_airway", "notes": "third person"}
+{"id": "air-06", "text": "face swolen cant breath", "label": "emergency_airway", "notes": "misspellings"}
+{"id": "air-07", "text": "After my wisdom tooth came out my throat feels tight and I have trouble breathing", "label": "emergency_airway", "notes": ""}
+{"id": "air-08", "text": "Kid's gum infection, now his face is puffy and he's having difficulty swallowing", "label": "emergency_airway", "notes": ""}
+{"id": "air-09", "text": "I have a dental infection and it's hard to swallow even water", "label": "emergency_airway", "notes": "swallowing + dental context"}
+{"id": "air-10", "text": "the swelling from my bad tooth has spread down my neck and I'm short of breath", "label": "emergency_airway", "notes": ""}
+{"id": "air-11", "text": "Swollen jaw, fever and I can't swallow my own spit", "label": "emergency_airway", "notes": ""}
+{"id": "air-12", "text": "my tongue is swelling up and i can't breathe properly after the dentist", "label": "emergency_airway", "notes": ""}
+{"id": "air-13", "text": "Mum's face swelled up overnight from a tooth and she's gasping", "label": "emergency_airway", "notes": ""}
+{"id": "air-14", "text": "choking feeling and big swelling under my jaw", "label": "emergency_airway", "notes": ""}
+{"id": "swl-01", "text": "One side of my face is swollen from a toothache", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-02", "text": "my cheek is swollen and I have a fever", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-03", "text": "Swelling near my eye after a sore tooth", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-04", "text": "My daughter's jaw is swollen and hot", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-05", "text": "swollen gums with pus and a temperature", "label": "urgent_swelling", "notes": "gum + severe modifier"}
+{"id": "swl-06", "text": "My gum has a huge swelling that is spreading", "label": "urgent_swelling", "notes": "gum + spreading"}
+{"id": "swl-07", "text": "face swelling from wisdom tooth getting bigger every hour", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-08", "text": "I've got a lump on my jaw that's swollen and sore", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-09", "text": "neck swollen after tooth pain, no trouble breathing", "label": "urgent_swelling", "notes": "negated breathing"}
+{"id": "swl-10", "text": "my face is puffy on the left since my tooth started hurting yesterday", "label": "urgent_swelling", "notes": ""}
+{"id": "swl-11", "text": "Swollen cheek, abscess I think, can swallow fine", "label": "urgent_swelling", "notes": "no swallowing difficulty"}
+{"id": "swl-12", "text": "Gran's face has swelled up under her dentures", "label": "urgent_swelling", "notes": ""}
+{"id": "avl-01", "text": "My son's front tooth got knocked out playing footy", "label": "dental_trauma_avulsion", "notes": "AU slang"}
+{"id": "avl-02", "text": "I just knocked my tooth out, what do I do?", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-03", "text": "adult tooth knocked out at netball", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-04", "text": "What should I do if a tooth is knocked out?", "label": "dental_trauma_avulsion", "notes": "hypothetical but time-critical"}
+{"id": "avl-05", "text": "Got punched and my tooth came out", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-06", "text": "fell off my bike and my tooth fell out", "label": "dental_trauma_avulsion", "notes": "injury before 'fell out'"}
+{"id": "avl-07", "text": "My tooth came out after I was hit with a cricket ball", "label": "dental_trauma_avulsion", "notes": "injury after 'came out'"}
+{"id": "avl-08", "text": "should I put a knocked out tooth in milk", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-09", "text": "my daughter lost a tooth playing hockey, it's an adult one", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-10", "text": "tooth got knocked loose in a fall", "label": "dental_trauma_avulsion", "notes": "luxation"}
+{"id": "avl-11", "text": "my front teeth were pushed back when I fell on the trampoline", "label": "dental_trauma_avulsion", "notes": "displacement"}
+{"id": "avl-12", "text": "knocked out both front teeth at rugby", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-13", "text": "how long do I have to save a knocked out tooth", "label": "dental_trauma_avulsion", "notes": ""}
+{"id": "avl-14", "text": "toddler knocked out a baby tooth on the coffee table", "label": "dental_trauma_avulsion", "notes": "baby tooth still urgent advice"}
+{"id": "bld-01", "text": "I had a tooth pulled this morning and the bleeding won't stop", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-02", "text": "can't stop the bleeding after my extraction", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-03", "text": "blood keeps soaking through the gauze", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-04", "text": "still bleeding 5 hours after wisdom tooth removal", "label": "urgent_bleeding", "notes": "weak + procedure"}
+{"id": "bld-05", "text": "My mouth is full of blood after the dentist", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-06", "text": "heavy bleeding from the socket and I'm on warfarin", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-07", "text": "Dad cut his tongue and there is lots of blood that isn't slowing down", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-08", "text": "blood is pouring out of where my tooth was taken out", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-09", "text": "keeps bleeding for hours since the extraction yesterday", "label": "urgent_bleeding", "notes": ""}
+{"id": "bld-10", "text": "gum bleeding wont stop no matter what i do", "label": "urgent_bleeding", "notes": "STT style"}
+{"id": "frc-01", "text": "I think I broke my jaw falling down the stairs", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-02", "text": "got hit in the face and now my teeth don't meet properly", "label": "urgent_fracture", "notes": "bite change + injury"}
+{"id": "frc-03", "text": "my jaw looks crooked after a fight", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-04", "text": "can't close my mouth after being punched", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-05", "text": "is my jaw broken? I was tackled and it hurts to open", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-06", "text": "fractured jaw from a car accident what now", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-07", "text": "jaw dislocated when I yawned and fell", "label": "urgent_fracture", "notes": ""}
+{"id": "frc-08", "text": "after the crash my bite feels wrong and my chin is numb", "label": "urgent_fracture", "notes": ""}
+{"id": "crs-01", "text": "The pain is so bad I want to kill myself", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-02", "text": "I've been thinking about suicide", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-03", "text": "i dont want to be alive anymore", "label": "crisis_self_harm", "notes": "STT style"}
+{"id": "crs-04", "text": "I feel like ending it all, nobody would care about my teeth", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-05", "text": "I've been hurting myself", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-06", "text": "honestly I'd be better off dead", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-07", "text": "I want to die, I can't afford a dentist", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-08", "text": "thinking of self harm again", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-09", "text": "no reason to keep living with this pain", "label": "crisis_self_harm", "notes": ""}
+{"id": "crs-10", "text": "I want to take my own life", "label": "crisis_self_harm", "notes": ""}
+{"id": "med-01", "text": "I have chest pain and my arm feels numb", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-02", "text": "my dad's face is drooping and his speech is slurred", "label": "medical_emergency_other", "notes": "stroke"}
+{"id": "med-03", "text": "She collapsed in the dentist waiting room", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-04", "text": "having a severe allergic reaction to something", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-05", "text": "my friend took too many pills for his toothache", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-06", "text": "he's having a seizure", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-07", "text": "I can't breathe", "label": "medical_emergency_other", "notes": "breathing, no dental context"}
+{"id": "med-08", "text": "my baby is unconscious", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-09", "text": "I think I'm having a heart attack", "label": "medical_emergency_other", "notes": ""}
+{"id": "med-10", "text": "overdosed on paracetamol for tooth pain", "label": "medical_emergency_other", "notes": ""}
+{"id": "none-01", "text": "Why do my gums bleed when I brush?", "label": "none", "notes": "hard negative: bleeding"}
+{"id": "none-02", "text": "My gums are still bleeding when I floss, is that normal?", "label": "none", "notes": "weak bleeding, no procedure"}
+{"id": "none-03", "text": "What causes facial swelling after dental work?", "label": "none", "notes": "general informational question"}
+{"id": "none-04", "text": "my child's baby tooth is wobbly and fell out, when will the adult one come through", "label": "none", "notes": "natural tooth loss"}
+{"id": "none-05", "text": "How much does it cost to get wisdom teeth out in Australia?", "label": "none", "notes": ""}
+{"id": "none-06", "text": "Is my child eligible for the Child Dental Benefits Schedule?", "label": "none", "notes": ""}
+{"id": "none-07", "text": "How do I clean my dentures?", "label": "none", "notes": ""}
+{"id": "none-08", "text": "I get a dry mouth at night, what helps?", "label": "none", "notes": ""}
+{"id": "none-09", "text": "This toothache is killing me", "label": "none", "notes": "hard negative: idiom"}
+{"id": "none-10", "text": "no swelling, just a dull ache in my back tooth", "label": "none", "notes": "negated swelling"}
+{"id": "none-11", "text": "I don't have any trouble breathing, I just have bad breath", "label": "none", "notes": "negation + breath/breathe"}
+{"id": "none-12", "text": "How do I stop bad breath?", "label": "none", "notes": "breath not breathing"}
+{"id": "none-13", "text": "can I use a public dental clinic if I have a health care card", "label": "none", "notes": ""}
+{"id": "none-14", "text": "what is the waiting list for public dental in NSW", "label": "none", "notes": ""}
+{"id": "none-15", "text": "My cracked tooth hurts when I bite", "label": "none", "notes": "cracked tooth, not jaw"}
+{"id": "none-16", "text": "When should my baby have their first dental check up?", "label": "none", "notes": ""}
+{"id": "none-17", "text": "Is it normal for wisdom teeth to hurt when they come through?", "label": "none", "notes": ""}
+{"id": "none-18", "text": "how long after a filling can I eat", "label": "none", "notes": ""}
+{"id": "none-19", "text": "Do I need antibiotics for a tooth infection?", "label": "none", "notes": "prescription question handled by RAG rules"}
+{"id": "none-20", "text": "My gums bled a bit after the extraction but it has stopped now", "label": "none", "notes": "resolved bleeding"}
+{"id": "none-21", "text": "my jaw clicks when I chew", "label": "none", "notes": ""}
+{"id": "none-22", "text": "Can mouthguards prevent knocked out teeth in sport?", "label": "none", "notes": "prevention; no knocked-out event phrasing"}
+{"id": "none-23", "text": "How can I tell if I have gum disease?", "label": "none", "notes": ""}
+{"id": "none-24", "text": "what fluoride toothpaste should kids use", "label": "none", "notes": ""}
+{"id": "none-25", "text": "I'm pregnant, is it safe to see the dentist?", "label": "none", "notes": ""}
+{"id": "none-26", "text": "My lips are dry and cracked", "label": "none", "notes": "cracked lips, not jaw"}
+{"id": "none-27", "text": "gums a little puffy and red when brushing", "label": "none", "notes": "mild gum swelling, no severe modifier"}
+{"id": "none-28", "text": "mouth ulcer on my tongue for a week", "label": "none", "notes": ""}
+{"id": "none-29", "text": "Is teeth grinding bad for my jaw?", "label": "none", "notes": ""}
+{"id": "none-30", "text": "How often should older people see a dentist?", "label": "none", "notes": ""}
+{"id": "none-31", "text": "I had my tooth taken out yesterday, how do I care for the socket", "label": "none", "notes": "procedure without bleeding problem"}
+{"id": "none-32", "text": "Why are my teeth sensitive to cold?", "label": "none", "notes": ""}
+{"id": "none-33", "text": "what are the signs of mouth cancer", "label": "none", "notes": ""}
+{"id": "none-34", "text": "does sugar-free gum help with dry mouth", "label": "none", "notes": ""}
+{"id": "none-35", "text": "my toddler bumped his lip, there's a tiny bit of blood but he's fine", "label": "none", "notes": "minor injury"}
+{"id": "none-36", "text": "What does swollen gums mean?", "label": "none", "notes": "general question about gum swelling"}
+{"id": "oos-01", "text": "What's the weather in Brisbane tomorrow?", "label": "out_of_scope", "notes": ""}
+{"id": "oos-02", "text": "write me a poem about the ocean", "label": "out_of_scope", "notes": ""}
+{"id": "oos-03", "text": "how do I lodge my tax return", "label": "out_of_scope", "notes": ""}
+{"id": "oos-04", "text": "what's the capital of Canada", "label": "out_of_scope", "notes": ""}
+{"id": "oos-05", "text": "give me a recipe for pavlova", "label": "out_of_scope", "notes": ""}
+{"id": "oos-06", "text": "who won the footy last night", "label": "out_of_scope", "notes": ""}
