@@ -123,6 +123,14 @@ export function ConsentGate({ open, health, currentConsent, saving, error, onDec
               <strong>{currentConsent ? 'research logging is on' : 'research logging is off'}</strong>.
             </p>
           ) : null}
+
+          {health ? (
+            // Version details researchers need to tie a session to a run.
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Model {health.model} · Corpus {health.corpus_version ? health.corpus_version.slice(0, 8) : 'n/a'} ·
+              Config {health.config_hash}
+            </p>
+          ) : null}
         </div>
 
         {error ? (

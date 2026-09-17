@@ -1,4 +1,3 @@
-import { Cloud, Lock } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ApiError,
@@ -71,7 +70,6 @@ export default function App() {
   const [consentRecord, setConsentRecord] = useLocalStorage<ConsentRecord | null>(CONSENT_KEY, null, isConsentRecord)
 
   const [health, setHealth] = useState<Health | null>(null)
-  const [healthFailed, setHealthFailed] = useState(false)
   const [consentOpen, setConsentOpen] = useState(() => consentRecord === null)
   const [consentSaving, setConsentSaving] = useState(false)
   const [consentError, setConsentError] = useState<string | null>(null)
@@ -120,7 +118,7 @@ export default function App() {
         if (!cancelled) setHealth(h)
       })
       .catch(() => {
-        if (!cancelled) setHealthFailed(true)
+        if (!cancelled) setHealth(null)
       })
     return () => {
       cancelled = true
@@ -337,8 +335,6 @@ export default function App() {
       ? 'The health information library has not been built yet, so answers may not be available.'
       : null)
 
-  const external = health !== null && health.local_only === false
-
   return (
     <div className="flex h-full flex-col">
       <a
@@ -390,32 +386,8 @@ export default function App() {
       </div>
 
       <footer className="border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom)] dark:border-slate-800 dark:bg-slate-950">
-        <div className="mx-auto w-full max-w-3xl space-y-1 px-4 py-2">
+        <div className="mx-auto w-full max-w-3xl px-4 py-2">
           <DisclaimerBanner />
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm text-slate-700 dark:text-slate-300">
-            {health ? (
-              <>
-                <span>
-                  Model: {health.model} · Corpus {health.corpus_version ? health.corpus_version.slice(0, 8) : 'n/a'} ·
-                  Config {health.config_hash}
-                </span>
-                <span aria-hidden="true">·</span>
-                {external ? (
-                  <span className="inline-flex items-center gap-1 font-semibold text-amber-900 dark:text-amber-200">
-                    <Cloud aria-hidden="true" className="h-4 w-4" />
-                    Questions are sent to an external AI service ({health.provider})
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1 font-semibold text-teal-900 dark:text-teal-200">
-                    <Lock aria-hidden="true" className="h-4 w-4" />
-                    Runs locally
-                  </span>
-                )}
-              </>
-            ) : (
-              <span>{healthFailed ? 'Service status unavailable' : 'Checking service status…'}</span>
-            )}
-          </p>
         </div>
       </footer>
 

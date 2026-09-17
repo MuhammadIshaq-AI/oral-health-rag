@@ -1,19 +1,14 @@
-import { ShieldAlert } from 'lucide-react'
-
+/**
+ * The single always-visible caveat under the composer. Per-answer safety text
+ * (the "general information, not dental advice" line and any emergency banner)
+ * comes from the backend with each response; technical details about the model,
+ * corpus and provider live in the Privacy dialog.
+ */
 export function DisclaimerBanner() {
   return (
-    <p className="flex items-start gap-2 text-sm font-medium leading-snug text-slate-900 dark:text-slate-100">
-      <ShieldAlert aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-red-700 dark:text-red-400" />
-      <span>
-        General information only — not a substitute for professional dental advice. In an emergency call{' '}
-        <a
-          href="tel:000"
-          className="font-bold text-red-800 underline underline-offset-2 dark:text-red-300"
-        >
-          000
-        </a>
-        .
-      </span>
+    <p className="text-center text-sm leading-snug text-slate-600 dark:text-slate-400">
+      DentalCare AU is an AI assistant and can make mistakes — check the sources shown with each
+      answer.
     </p>
   )
 }
