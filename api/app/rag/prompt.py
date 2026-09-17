@@ -19,8 +19,17 @@ NO_GUIDANCE = (
 
 @lru_cache
 def load_prompt(name: str, version: str) -> str:
-    """Load `prompts/{name}_{version}.md`."""
-    return (PROMPTS_DIR / f"{name}_{version}.md").read_text(encoding="utf-8").strip()
+    """Load `prompts/{name}_{version}.md`.
+
+    A prompt version may override only some prompts — e.g. `v1s` rewrites the
+    system prompt for very small local models but reuses the rest. Missing files
+    therefore fall back to the base version (`v1s` → `v1`).
+    """
+    path = PROMPTS_DIR / f"{name}_{version}.md"
+    if not path.exists():
+        base = version.rstrip("abcdefghijklmnopqrstuvwxyz") or "v1"
+        path = PROMPTS_DIR / f"{name}_{base}.md"
+    return path.read_text(encoding="utf-8").strip()
 
 
 def format_passages(hits: list[Hit]) -> str:

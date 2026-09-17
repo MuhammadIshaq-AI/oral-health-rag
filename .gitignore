@@ -31,3 +31,6 @@ frontend/dist/
 Thumbs.db
 .idea/
 .vscode/
+
+# Machine-specific compose overrides
+docker-compose.override.yml

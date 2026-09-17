@@ -89,9 +89,17 @@ def parse_citations(text: str, n_passages: int) -> list[int]:
     return seen
 
 
+#: Small models copy a long refusal sentence out of the prompt verbatim, so the
+#: short-prompt variants ask for this sentinel instead; both mean "no answer".
+NO_ANSWER_TOKEN = "NO_ANSWER"
+
+
 def is_refusal(text: str) -> bool:
-    """True if the answer is the no-guidance message."""
-    return text.strip().lower().startswith(NO_GUIDANCE[:40].lower())
+    """True if the answer is the no-guidance message or the NO_ANSWER sentinel."""
+    stripped = text.strip()
+    return stripped.upper().startswith(NO_ANSWER_TOKEN) or stripped.lower().startswith(
+        NO_GUIDANCE[:40].lower()
+    )
 
 
 def _needs_citation(sentence: str) -> bool:

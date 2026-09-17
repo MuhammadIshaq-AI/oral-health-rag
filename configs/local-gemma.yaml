@@ -1,0 +1,26 @@
+# Smallest local option: Gemma 3 270M through Ollama. Everything stays on this
+# machine (no API keys, nothing sent to a provider).
+#
+# NOTE: at 270M parameters this model is far below the 7-8B class the prompts
+# were written for. Expect weak citation discipline, so the output validator
+# will often reject its answers and fall back to the no-guidance reply. Use
+# configs/local-qwen.yaml for a usable local assistant.
+extends: default.yaml
+name: local-gemma3-270m
+prompt_version: v1s   # short prompt with a worked example; small models need it
+description: Gemma 3 270M via Ollama, hybrid + rerank retrieval.
+retrieval:
+  final_k: 3   # fewer, shorter passages keep a 270M model on task
+llm:
+  provider: ollama
+  model: gemma3:270m
+  max_tokens: 500
+  timeout_s: 180
+judge_llm:
+  provider: ollama
+  model: gemma3:270m
+  temperature: 0.0
+  max_tokens: 2000
+  timeout_s: 300
+triage:
+  use_model: false   # a 270M model is not reliable enough to escalate safety labels
