@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Root font size drives every rem-based Tailwind size, so the whole interface
+ * (text, spacing, tap targets) scales with the user's chosen size.
+ * Percentages respect the browser's own default font-size setting.
+ *   standard   = 18px  (112.5% of 16px)
+ *   large      = 21px  (131.25%)
+ *   extra large = 24px (150%)
+ */
+@layer base {
+  html.fs-standard {
+    font-size: 112.5%;
+  }
+  html.fs-large {
+    font-size: 131.25%;
+  }
+  html.fs-xlarge {
+    font-size: 150%;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Strong, consistent focus ring for keyboard users. */
+  :focus-visible {
+    outline: 3px solid #0e7490;
+    outline-offset: 2px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :focus-visible {
+      outline-color: #67e8f9;
+    }
+  }
+
+  dialog::backdrop {
+    background: rgb(15 23 42 / 0.7);
+  }
+}
+
+@layer utilities {
+  .no-touch-callout {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
