@@ -1,0 +1,102 @@
+{"id": "g001", "status": "seed", "topic": "gums", "question": "Why do my gums bleed when I brush my teeth?", "relevant_urls": ["https://www.healthdirect.gov.au/bleeding-gums-and-dental-bleeding", "https://www.healthdirect.gov.au/gum-disease"]}
+{"id": "g002", "status": "seed", "topic": "gums", "question": "What are the early signs of gum disease?", "relevant_urls": ["https://www.healthdirect.gov.au/gum-disease", "https://www.healthdirect.gov.au/bleeding-gums-and-dental-bleeding"]}
+{"id": "g003", "status": "seed", "topic": "wisdom-teeth", "question": "What should I expect after having my wisdom teeth removed?", "relevant_urls": ["https://www.healthdirect.gov.au/surgery/removing-wisdom-teeth"]}
+{"id": "g004", "status": "seed", "topic": "wisdom-teeth", "question": "Do wisdom teeth always need to be taken out?", "relevant_urls": ["https://www.healthdirect.gov.au/surgery/removing-wisdom-teeth"]}
+{"id": "g005", "status": "seed", "topic": "children", "question": "When should I start brushing my baby's teeth and how much toothpaste should I use?", "relevant_urls": ["https://www.healthdirect.gov.au/looking-after-your-baby-or-childs-teeth", "https://www.dental.sa.gov.au/advice/baby-teeth-and-teething"]}
+{"id": "g006", "status": "seed", "topic": "children", "question": "What helps a baby who is teething?", "relevant_urls": ["https://www.dental.sa.gov.au/advice/baby-teeth-and-teething", "https://www.healthdirect.gov.au/looking-after-your-baby-or-childs-teeth"]}
+{"id": "g007", "status": "seed", "topic": "children", "question": "Are fissure sealants a good idea for my child's back teeth?", "relevant_urls": ["https://www.healthdirect.gov.au/dental-fissure-sealants"]}
+{"id": "g008", "status": "seed", "topic": "dentures", "question": "How do I clean and look after my dentures?", "relevant_urls": ["https://www.healthdirect.gov.au/dentures"]}
+{"id": "g009", "status": "seed", "topic": "dry-mouth", "question": "What causes a dry mouth and what can I do about it?", "relevant_urls": ["https://www.healthdirect.gov.au/dry-mouth-syndrome", "https://www.dental.sa.gov.au/advice/dry-mouth"]}
+{"id": "g010", "status": "seed", "topic": "cost-access", "question": "How can I get cheaper dental care in Australia?", "relevant_urls": ["https://www.healthdirect.gov.au/cost-of-dental-care", "https://www.health.nsw.gov.au/oralhealth/Pages/info-patients.aspx", "https://www.dental.wa.gov.au/Dental-Services/General-Dental-Service/", "https://www.dental.sa.gov.au/advice/dental-appointments-adults"]}
+{"id": "g011", "status": "seed", "topic": "cost-access", "question": "What does the Child Dental Benefits Schedule cover and who is eligible?", "relevant_urls": ["https://www.health.nsw.gov.au/oralhealth/Pages/child-dental-benefits-schedule.aspx", "https://www.healthdirect.gov.au/cost-of-dental-care"]}
+{"id": "g012", "status": "seed", "topic": "cost-access", "question": "Who can use public dental services in NSW?", "relevant_urls": ["https://www.health.nsw.gov.au/oralhealth/Pages/info-patients.aspx"]}
+{"id": "g013", "status": "seed", "topic": "statistics", "question": "How long is the wait for public dental care in NSW?", "relevant_urls": ["https://www.health.nsw.gov.au/oralhealth/Pages/public-dental-care-waiting.aspx", "https://www.health.nsw.gov.au/oralhealth/Pages/info-patients.aspx"]}
+{"id": "g014", "status": "seed", "topic": "emergency-trauma", "question": "What should I do if an adult tooth is knocked out?", "relevant_urls": ["https://www.healthdirect.gov.au/dental-injury", "https://www.dental.sa.gov.au/advice/dental-emergency-first-aid"]}
+{"id": "g015", "status": "seed", "topic": "emergency-trauma", "question": "When is a toothache or facial swelling a dental emergency?", "relevant_urls": ["https://www.healthdirect.gov.au/tooth-abscess", "https://www.dental.sa.gov.au/emergency", "https://www.dental.wa.gov.au/Emergency/"]}
+{"id": "g016", "status": "seed", "topic": "decay", "question": "How can I prevent tooth decay?", "relevant_urls": ["https://www.healthdirect.gov.au/tooth-decay", "https://www.healthdirect.gov.au/teeth-cleaning"]}
+{"id": "g017", "status": "seed", "topic": "other", "question": "What can I do about bad breath?", "relevant_urls": ["https://www.healthdirect.gov.au/halitosis"]}
+{"id": "g018", "status": "seed", "topic": "ulcers", "question": "When should I see a doctor about a mouth ulcer?", "relevant_urls": ["https://www.healthdirect.gov.au/mouth-sores-and-ulcers", "https://www.healthdirect.gov.au/mouth-cancer"]}
+{"id": "g019", "status": "seed", "topic": "hygiene", "question": "How often should I have a dental check-up?", "relevant_urls": ["https://www.healthdirect.gov.au/dental-check-up"]}
+{"id": "g020", "status": "seed", "topic": "other", "question": "How does sugar affect my teeth?", "relevant_urls": ["https://www.who.int/news-room/fact-sheets/detail/sugars-and-dental-caries", "https://www.healthdirect.gov.au/tooth-decay"]}
+{"id": "g021", "status": "todo", "topic": "gums", "question": "Can gum disease affect my heart or diabetes?", "relevant_urls": []}
+{"id": "g022", "status": "todo", "topic": "gums", "question": "Is it normal for gums to bleed when I start flossing?", "relevant_urls": []}
+{"id": "g023", "status": "todo", "topic": "gums", "question": "What is periodontitis and can it be reversed?", "relevant_urls": []}
+{"id": "g024", "status": "todo", "topic": "gums", "question": "Why are my gums receding?", "relevant_urls": []}
+{"id": "g025", "status": "todo", "topic": "gums", "question": "Does smoking or vaping make gum disease worse?", "relevant_urls": []}
+{"id": "g026", "status": "todo", "topic": "gums", "question": "What mouthwash is good for sore gums?", "relevant_urls": []}
+{"id": "g027", "status": "todo", "topic": "gums", "question": "Can pregnancy cause bleeding gums?", "relevant_urls": []}
+{"id": "g028", "status": "todo", "topic": "gums", "question": "How is gum disease treated by a dentist?", "relevant_urls": []}
+{"id": "g029", "status": "todo", "topic": "wisdom-teeth", "question": "What is a dry socket and how do I avoid it?", "relevant_urls": []}
+{"id": "g030", "status": "todo", "topic": "wisdom-teeth", "question": "How long does swelling last after wisdom tooth surgery?", "relevant_urls": []}
+{"id": "g031", "status": "todo", "topic": "wisdom-teeth", "question": "What can I eat after my wisdom teeth are removed?", "relevant_urls": []}
+{"id": "g032", "status": "todo", "topic": "wisdom-teeth", "question": "Why does my wisdom tooth gum hurt and look swollen?", "relevant_urls": []}
+{"id": "g033", "status": "todo", "topic": "wisdom-teeth", "question": "Can I have my wisdom teeth out in a public hospital?", "relevant_urls": []}
+{"id": "g034", "status": "todo", "topic": "wisdom-teeth", "question": "What are the risks of wisdom tooth removal?", "relevant_urls": []}
+{"id": "g035", "status": "todo", "topic": "children", "question": "When do baby teeth start falling out?", "relevant_urls": []}
+{"id": "g036", "status": "todo", "topic": "children", "question": "Is it bad to put my baby to bed with a bottle of milk?", "relevant_urls": []}
+{"id": "g037", "status": "todo", "topic": "children", "question": "When should my child first see a dentist?", "relevant_urls": []}
+{"id": "g038", "status": "todo", "topic": "children", "question": "Should my child use children's toothpaste or adult toothpaste?", "relevant_urls": []}
+{"id": "g039", "status": "todo", "topic": "children", "question": "Does thumb sucking damage children's teeth?", "relevant_urls": []}
+{"id": "g040", "status": "todo", "topic": "children", "question": "What do I do if my child chips a baby tooth?", "relevant_urls": []}
+{"id": "g041", "status": "todo", "topic": "children", "question": "Are school dental services free?", "relevant_urls": []}
+{"id": "g042", "status": "todo", "topic": "children", "question": "Why does my child have brown spots on their teeth?", "relevant_urls": []}
+{"id": "g043", "status": "todo", "topic": "dentures", "question": "Should I take my dentures out at night?", "relevant_urls": []}
+{"id": "g044", "status": "todo", "topic": "dentures", "question": "My dentures are loose and rubbing, what should I do?", "relevant_urls": []}
+{"id": "g045", "status": "todo", "topic": "dentures", "question": "How much do dentures cost and can I get them through public dental?", "relevant_urls": []}
+{"id": "g046", "status": "todo", "topic": "dentures", "question": "What is the difference between full and partial dentures?", "relevant_urls": []}
+{"id": "g047", "status": "todo", "topic": "dentures", "question": "Can I use normal toothpaste on my dentures?", "relevant_urls": []}
+{"id": "g048", "status": "todo", "topic": "dentures", "question": "How long do dentures last?", "relevant_urls": []}
+{"id": "g049", "status": "todo", "topic": "dry-mouth", "question": "Can my medicines cause a dry mouth?", "relevant_urls": []}
+{"id": "g050", "status": "todo", "topic": "dry-mouth", "question": "Does dry mouth increase the risk of tooth decay?", "relevant_urls": []}
+{"id": "g051", "status": "todo", "topic": "dry-mouth", "question": "Is sugar-free chewing gum good for dry mouth?", "relevant_urls": []}
+{"id": "g052", "status": "todo", "topic": "dry-mouth", "question": "What is saliva substitute and where can I get it?", "relevant_urls": []}
+{"id": "g053", "status": "todo", "topic": "dry-mouth", "question": "Why is my mouth dry when I wake up?", "relevant_urls": []}
+{"id": "g054", "status": "todo", "topic": "cost-access", "question": "Does Medicare cover dental care for adults?", "relevant_urls": []}
+{"id": "g055", "status": "todo", "topic": "cost-access", "question": "How do I get on the public dental waiting list in WA?", "relevant_urls": []}
+{"id": "g056", "status": "todo", "topic": "cost-access", "question": "Can I get emergency dental care if I have a concession card in SA?", "relevant_urls": []}
+{"id": "g057", "status": "todo", "topic": "cost-access", "question": "What is an Oral Health Fee for Service voucher?", "relevant_urls": []}
+{"id": "g058", "status": "todo", "topic": "cost-access", "question": "Is private health insurance worth it for dental?", "relevant_urls": []}
+{"id": "g059", "status": "todo", "topic": "cost-access", "question": "Are there free dental services for Aboriginal and Torres Strait Islander people?", "relevant_urls": []}
+{"id": "g060", "status": "todo", "topic": "cost-access", "question": "Can dental students treat me for a lower cost?", "relevant_urls": []}
+{"id": "g061", "status": "todo", "topic": "cost-access", "question": "How much does a filling usually cost?", "relevant_urls": []}
+{"id": "g062", "status": "todo", "topic": "cost-access", "question": "How do I check my child's CDBS balance?", "relevant_urls": []}
+{"id": "g063", "status": "todo", "topic": "cost-access", "question": "Is there a mobile dental clinic for rural areas?", "relevant_urls": []}
+{"id": "g064", "status": "todo", "topic": "emergency-trauma", "question": "How should I store a knocked-out tooth on the way to the dentist?", "relevant_urls": []}
+{"id": "g065", "status": "todo", "topic": "emergency-trauma", "question": "What should I do if I chip or crack a tooth?", "relevant_urls": []}
+{"id": "g066", "status": "todo", "topic": "emergency-trauma", "question": "Where can I get after-hours dental help?", "relevant_urls": []}
+{"id": "g067", "status": "todo", "topic": "emergency-trauma", "question": "How do I stop bleeding after a tooth extraction?", "relevant_urls": []}
+{"id": "g068", "status": "todo", "topic": "emergency-trauma", "question": "What should I do if I bite my tongue badly?", "relevant_urls": []}
+{"id": "g069", "status": "todo", "topic": "emergency-trauma", "question": "Should I go to the emergency department for a dental abscess?", "relevant_urls": []}
+{"id": "g070", "status": "todo", "topic": "emergency-trauma", "question": "Do mouthguards prevent dental injuries in sport?", "relevant_urls": []}
+{"id": "g071", "status": "todo", "topic": "decay", "question": "What are the first signs of a cavity?", "relevant_urls": []}
+{"id": "g072", "status": "todo", "topic": "decay", "question": "Does fluoride in tap water protect teeth?", "relevant_urls": []}
+{"id": "g073", "status": "todo", "topic": "decay", "question": "Are acidic drinks bad for tooth enamel?", "relevant_urls": []}
+{"id": "g074", "status": "todo", "topic": "decay", "question": "What happens if a cavity is not treated?", "relevant_urls": []}
+{"id": "g075", "status": "todo", "topic": "decay", "question": "What types of fillings are there?", "relevant_urls": []}
+{"id": "g076", "status": "todo", "topic": "decay", "question": "Why are my teeth sensitive to cold drinks?", "relevant_urls": []}
+{"id": "g077", "status": "todo", "topic": "hygiene", "question": "Should I use an electric toothbrush?", "relevant_urls": []}
+{"id": "g078", "status": "todo", "topic": "hygiene", "question": "How do I floss properly?", "relevant_urls": []}
+{"id": "g079", "status": "todo", "topic": "hygiene", "question": "Should I rinse after brushing my teeth?", "relevant_urls": []}
+{"id": "g080", "status": "todo", "topic": "hygiene", "question": "How often should I replace my toothbrush?", "relevant_urls": []}
+{"id": "g081", "status": "todo", "topic": "hygiene", "question": "Is professional teeth cleaning necessary?", "relevant_urls": []}
+{"id": "g082", "status": "todo", "topic": "hygiene", "question": "How can older people in aged care keep their mouths healthy?", "relevant_urls": []}
+{"id": "g083", "status": "todo", "topic": "pregnancy", "question": "Is it safe to have dental treatment while pregnant?", "relevant_urls": []}
+{"id": "g084", "status": "todo", "topic": "pregnancy", "question": "Can morning sickness damage my teeth?", "relevant_urls": []}
+{"id": "g085", "status": "todo", "topic": "cancer", "question": "What are the warning signs of mouth cancer?", "relevant_urls": []}
+{"id": "g086", "status": "todo", "topic": "cancer", "question": "Who is most at risk of oral cancer?", "relevant_urls": []}
+{"id": "g087", "status": "todo", "topic": "cancer", "question": "What does a white patch in my mouth mean?", "relevant_urls": []}
+{"id": "g088", "status": "todo", "topic": "ulcers", "question": "What causes canker sores?", "relevant_urls": []}
+{"id": "g089", "status": "todo", "topic": "ulcers", "question": "How can I ease the pain of a mouth ulcer?", "relevant_urls": []}
+{"id": "g090", "status": "todo", "topic": "other", "question": "What is oral thrush and how is it treated?", "relevant_urls": []}
+{"id": "g091", "status": "todo", "topic": "other", "question": "Why do I grind my teeth at night?", "relevant_urls": []}
+{"id": "g092", "status": "todo", "topic": "other", "question": "What is dental erosion?", "relevant_urls": []}
+{"id": "g093", "status": "todo", "topic": "other", "question": "Is a root canal painful?", "relevant_urls": []}
+{"id": "g094", "status": "todo", "topic": "other", "question": "Can a tooth abscess go away on its own?", "relevant_urls": []}
+{"id": "g095", "status": "todo", "topic": "other", "question": "What is noma?", "relevant_urls": []}
+{"id": "g096", "status": "todo", "topic": "statistics", "question": "How common is tooth decay in Australian children?", "relevant_urls": []}
+{"id": "g097", "status": "todo", "topic": "statistics", "question": "How many people worldwide have untreated tooth decay?", "relevant_urls": []}
+{"id": "g098", "status": "todo", "topic": "statistics", "question": "How many adults are on the public dental waiting list?", "relevant_urls": []}
+{"id": "g099", "status": "todo", "topic": "statistics", "question": "What proportion of Australians avoid the dentist because of cost?", "relevant_urls": []}
+{"id": "g100", "status": "todo", "topic": "other", "question": "What is a tooth extraction and how long does healing take?", "relevant_urls": []}
+{"id": "g101", "status": "todo", "topic": "other", "question": "Do I need to see a dentist if I have no teeth left?", "relevant_urls": []}
+{"id": "g102", "status": "todo", "topic": "children", "question": "How can I stop my toddler getting tooth decay from juice?", "relevant_urls": []}

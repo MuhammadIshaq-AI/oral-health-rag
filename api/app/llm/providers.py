@@ -20,7 +20,7 @@ async def _post_with_retry(
     url: str,
     payload: dict[str, Any],
     headers: dict[str, str],
-    retries: int = 5,
+    retries: int = 8,
 ) -> dict[str, Any]:
     delay = 2.0
     last = ""
