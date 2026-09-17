@@ -31,10 +31,22 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    /* Clinical white with a faint mint wash, like a clean surgery. */
+    @apply bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    background-image:
+      radial-gradient(60rem 30rem at 50% -12rem, rgb(20 184 166 / 0.13), transparent 70%),
+      linear-gradient(180deg, rgb(240 253 250 / 0.75), rgb(255 255 255 / 0) 22rem);
+    background-attachment: fixed;
     line-height: 1.55;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image:
+        radial-gradient(60rem 30rem at 50% -12rem, rgb(13 148 136 / 0.22), transparent 70%),
+        linear-gradient(180deg, rgb(15 23 42 / 0.9), rgb(2 6 23 / 0) 22rem);
+    }
   }
 
   /* Strong, consistent focus ring for keyboard users. */
@@ -50,6 +62,25 @@
 
   dialog::backdrop {
     background: rgb(15 23 42 / 0.7);
+  }
+}
+
+@layer components {
+  /* One card treatment for answers, the composer and other raised surfaces:
+     white, hairline mint-tinted border, and a soft shadow with a teal cast. */
+  .surface-card {
+    @apply rounded-2xl border border-teal-900/10 bg-white dark:border-slate-700/80 dark:bg-slate-900;
+    box-shadow:
+      0 1px 2px rgb(15 23 42 / 0.04),
+      0 12px 28px -18px rgb(13 148 136 / 0.45);
+  }
+  /* Interactive cards (starter questions, source chips) lift slightly on hover. */
+  .surface-card-interactive {
+    @apply surface-card transition-colors;
+    @apply hover:border-teal-700/40 hover:bg-teal-50/60 dark:hover:border-teal-400/50 dark:hover:bg-slate-800;
+  }
+  .bar-surface {
+    @apply border-teal-900/10 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/85;
   }
 }
 

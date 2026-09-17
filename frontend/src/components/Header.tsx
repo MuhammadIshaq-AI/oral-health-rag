@@ -23,7 +23,7 @@ export function Header({
   canReset,
 }: HeaderProps) {
   return (
-    <header className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+    <header className="bar-surface sticky top-0 z-30 border-b">
       <div className="mx-auto w-full max-w-3xl px-4 py-2">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">

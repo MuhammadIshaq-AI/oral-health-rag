@@ -73,7 +73,7 @@ export function Composer({
   return (
     <form onSubmit={submit} aria-label="Ask a question" className="space-y-3">
       {showVoicePanel ? (
-        <div className="rounded-2xl border-2 border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
+        <div className="surface-card p-3">
           {ptt.status === 'error' && ptt.error ? (
             <div role="alert" className="flex items-start gap-3 text-rose-900 dark:text-rose-100">
               <AlertCircle aria-hidden="true" className="mt-0.5 h-6 w-6 shrink-0" />

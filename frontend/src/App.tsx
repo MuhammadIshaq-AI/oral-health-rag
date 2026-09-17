@@ -366,7 +366,7 @@ export default function App() {
         />
       </main>
 
-      <div className="border-t border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
+      <div className="bar-surface border-t">
         <div className="mx-auto w-full max-w-3xl px-4 pb-1 pt-3">
           <Composer
             value={draft}
@@ -385,7 +385,7 @@ export default function App() {
         </div>
       </div>
 
-      <footer className="border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom)] dark:border-slate-800 dark:bg-slate-950">
+      <footer className="bar-surface border-t pb-[env(safe-area-inset-bottom)]">
         <div className="mx-auto w-full max-w-3xl px-4 py-2">
           <DisclaimerBanner />
         </div>

@@ -19,7 +19,7 @@ export function MessageBubble({ message, tts, busy, onRetry }: MessageBubbleProp
   if (message.role === 'user') {
     return (
       <div className="flex justify-end">
-        <div className="max-w-[88%] rounded-2xl rounded-br-md bg-teal-800 px-4 py-3 text-white shadow-sm dark:bg-teal-700">
+        <div className="max-w-[88%] rounded-2xl rounded-br-md bg-gradient-to-br from-teal-700 to-teal-800 px-4 py-3 text-white shadow-md shadow-teal-900/15 dark:from-teal-600 dark:to-teal-700">
           <h2 className="sr-only">You asked</h2>
           {message.modality !== 'text' ? (
             <p className="mb-1 flex items-center gap-1.5 text-sm text-teal-50">
@@ -72,7 +72,7 @@ function AssistantBubble({ message, tts }: { message: Extract<ChatMessage, { rol
       <article
         ref={containerRef}
         aria-label="DentalCare AU answer"
-        className="w-full max-w-[94%] space-y-3 rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+        className="surface-card w-full max-w-[94%] space-y-3 rounded-bl-md px-4 py-3 text-slate-900 dark:text-slate-100"
       >
         <TriageAlert triage={response.triage} />
 
