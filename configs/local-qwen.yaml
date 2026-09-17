@@ -1,0 +1,2 @@
+extends: default.yaml
+name: local-qwen2.5-7b

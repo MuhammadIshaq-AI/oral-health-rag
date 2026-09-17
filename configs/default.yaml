@@ -1,0 +1,25 @@
+# Reproducible default: everything runs locally (Ollama + local embeddings/reranker).
+name: default-local
+description: Local Qwen2.5-7B-Instruct via Ollama, hybrid BM25+dense retrieval with bge-reranker-v2-m3.
+prompt_version: v1
+rewrite_queries: true
+max_history_turns: 6
+retrieval:
+  mode: rerank
+  dense_k: 50
+  bm25_k: 50
+  rrf_k: 60
+  rerank_candidates: 30
+  final_k: 6
+  min_rerank_score: 0.15
+  min_dense_score: 0.45
+  include_secondary: true
+llm:
+  provider: ollama
+  model: qwen2.5:7b-instruct
+  temperature: 0.0
+  max_tokens: 700
+  seed: 42
+triage:
+  use_model: true
+  corpus_first_aid: true

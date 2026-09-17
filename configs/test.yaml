@@ -1,0 +1,8 @@
+# Used by unit tests: no network, no models.
+extends: default.yaml
+name: test
+llm:
+  provider: fake
+  model: fake-echo
+triage:
+  use_model: false

@@ -1,0 +1,5 @@
+extends: default.yaml
+name: local-llama3.1-8b
+description: Local Llama-3.1-8B-Instruct via Ollama.
+llm:
+  model: llama3.1:8b-instruct-q4_K_M

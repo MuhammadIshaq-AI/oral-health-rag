@@ -1,0 +1,9 @@
+# API model used for the published README numbers on the development machine.
+# NOTE: questions and retrieved passages are sent to Google. See PRIVACY.md.
+extends: default.yaml
+name: gemini-flash
+description: Gemini Flash (OpenAI-compatible endpoint), hybrid + rerank retrieval.
+llm:
+  provider: gemini
+  model: gemini-3.6-flash
+  seed: null
