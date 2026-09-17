@@ -1,0 +1,601 @@
+# DentalCare AU corpus manifest.
+#
+# Only openly accessible, patient-facing public guidance pages. The pipeline stores
+# raw snapshots locally under data/raw/ (never committed) with retrieval dates.
+#
+# `enabled: false` marks sources that robots.txt allows but whose website terms of use
+# prohibit automated collection without written permission. Keep them disabled until
+# permission is obtained (see docs/corpus.md). Hosts behind bot challenges (AIHW,
+# Queensland Health, Oral Health Victoria) are listed in docs/corpus.md, not here.
+#
+# Changing this file changes the corpus_version hash.
+
+user_agent: Mozilla/5.0 (compatible; DentalCareAU-research/0.1; +https://github.com/MuhammadIshaq-AI/oral-health-rag)
+min_delay_s: 2.5
+sources:
+- id: healthdirect-bleeding-gums
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/bleeding-gums-and-dental-bleeding
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - gums
+  enabled: true
+- id: healthdirect-gum-disease
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/gum-disease
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - gums
+  enabled: true
+- id: healthdirect-tooth-decay
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/tooth-decay
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - decay
+  enabled: true
+- id: healthdirect-tooth-abscess
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/tooth-abscess
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - emergency-trauma
+  - decay
+  enabled: true
+- id: healthdirect-removing-wisdom-teeth
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/surgery/removing-wisdom-teeth
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - wisdom-teeth
+  enabled: true
+- id: healthdirect-dry-mouth
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dry-mouth-syndrome
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - dry-mouth
+  enabled: true
+- id: healthdirect-dentures
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dentures
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - dentures
+  enabled: true
+- id: healthdirect-mouth-ulcers
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/mouth-sores-and-ulcers
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - ulcers
+  enabled: true
+- id: healthdirect-bad-breath
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/halitosis
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - hygiene
+  - other
+  enabled: true
+- id: healthdirect-teeth-grinding
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/teeth-grinding
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - other
+  enabled: true
+- id: healthdirect-dental-injury
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dental-injury
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - emergency-trauma
+  enabled: true
+- id: healthdirect-childrens-teeth
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/looking-after-your-baby-or-childs-teeth
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - children
+  - hygiene
+  enabled: true
+- id: healthdirect-mouth-cancer
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/mouth-cancer
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - cancer
+  enabled: true
+- id: healthdirect-cost-of-dental-care
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/cost-of-dental-care
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - cost-access
+  enabled: true
+- id: healthdirect-dental-check-up
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dental-check-up
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - hygiene
+  - cost-access
+  enabled: true
+- id: healthdirect-teeth-cleaning
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/teeth-cleaning
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - hygiene
+  enabled: true
+- id: healthdirect-dental-erosion
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dental-erosion
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - decay
+  enabled: true
+- id: healthdirect-oral-thrush
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/oral-thrush
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - other
+  enabled: true
+- id: healthdirect-tooth-extraction
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/tooth-extraction
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - other
+  enabled: true
+- id: healthdirect-dental-fillings
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dental-fillings
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - decay
+  enabled: true
+- id: healthdirect-fissure-sealants
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/dental-fissure-sealants
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - decay
+  - children
+  enabled: true
+- id: healthdirect-mouth-tongue-cuts
+  source_org: healthdirect Australia
+  url: https://www.healthdirect.gov.au/mouth-and-tongue-cuts
+  jurisdiction: AU
+  licence: © Healthdirect Australia; Terms of Use bar modifying/republishing without permission
+  secondary: false
+  topics:
+  - emergency-trauma
+  enabled: true
+- id: ada-dental-trauma
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/dental-trauma
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - emergency-trauma
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-child-dental-benefits-schedule
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/child-dental-benefits-schedule
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - cost-access
+  - children
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-government-dental-care
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/government-dental-care
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - cost-access
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-dentures
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/dentures
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - dentures
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-dry-mouth
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/dry-mouth
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - dry-mouth
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-wisdom-teeth
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/wisdom-teeth
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - wisdom-teeth
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-gum-disease
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/gum-diseases
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - gums
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-dental-care-for-kids
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/dental-care-for-kids
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - children
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-pregnancy
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/pregnancy
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - pregnancy
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: ada-11-oral-health-messages
+  source_org: Australian Dental Association
+  url: https://teeth.org.au/australias-11-oral-health-messages
+  jurisdiction: AU
+  licence: © ADA; personal non-commercial use only; T&Cs cl.10.2/41.7 bar robots/scrapers without ADA written consent
+  secondary: false
+  topics:
+  - hygiene
+  enabled: false
+  terms_note: teeth.org.au terms (cl. 10.2, 41.7) prohibit robots/scrapers without ADA written consent
+- id: bhc-gum-disease
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/gum-disease
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - gums
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-tooth-decay
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/Tooth-decay
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - decay
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-dental-injuries
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/Dental-injuries
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - emergency-trauma
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-wisdom-teeth
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/wisdom-teeth
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - wisdom-teeth
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-dentures
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/dentures
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - dentures
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-dry-mouth
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/dry-mouth
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - dry-mouth
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-mouth-ulcers
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/mouth-ulcers
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - ulcers
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-teeth-development-children
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/teeth-development-in-children
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - children
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-pregnancy-and-teeth
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/healthyliving/pregnancy-and-teeth
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - pregnancy
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-seeing-a-dentist
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/servicesandsupport/seeing-a-dentist-or-dental-health-practitioner
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - cost-access
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-fluoride
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/dental-care-fluoride
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - decay
+  - hygiene
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-mouth-cancer
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/mouth-cancer
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - cancer
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: bhc-teeth-and-mouth-care
+  source_org: Better Health Channel (Victorian Department of Health)
+  url: https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/teeth-and-mouth-care
+  jurisdiction: VIC
+  licence: © State of Victoria; fair dealing only, no public/commercial reuse or adaptation without written permission
+  secondary: false
+  topics:
+  - hygiene
+  enabled: false
+  terms_note: BHC terms of use prohibit screen scraping; needs written permission
+- id: nsw-dental-info-patients
+  source_org: NSW Health
+  url: https://www.health.nsw.gov.au/oralhealth/Pages/info-patients.aspx
+  jurisdiction: NSW
+  licence: CC BY 4.0 (© State of New South Wales NSW Ministry of Health)
+  secondary: false
+  topics:
+  - cost-access
+  enabled: true
+- id: nsw-child-dental-benefits-schedule
+  source_org: NSW Health
+  url: https://www.health.nsw.gov.au/oralhealth/Pages/child-dental-benefits-schedule.aspx
+  jurisdiction: NSW
+  licence: CC BY 4.0 (© State of New South Wales NSW Ministry of Health)
+  secondary: false
+  topics:
+  - cost-access
+  - children
+  enabled: true
+- id: nsw-oral-health-fee-for-service
+  source_org: NSW Health
+  url: https://www.health.nsw.gov.au/oralhealth/Pages/nsw-oral-health-fee-for-service-scheme.aspx
+  jurisdiction: NSW
+  licence: CC BY 4.0 (© State of New South Wales NSW Ministry of Health)
+  secondary: false
+  topics:
+  - cost-access
+  enabled: true
+- id: nsw-dental-health-information
+  source_org: NSW Health
+  url: https://www.health.nsw.gov.au/oralhealth/prevention/Pages/dental-health-info.aspx
+  jurisdiction: NSW
+  licence: CC BY 4.0 (© State of New South Wales NSW Ministry of Health)
+  secondary: false
+  topics:
+  - hygiene
+  enabled: true
+- id: nsw-public-dental-service-data
+  source_org: NSW Health
+  url: https://www.health.nsw.gov.au/oralhealth/Pages/public-dental-care-waiting.aspx
+  jurisdiction: NSW
+  licence: CC BY 4.0 (© State of New South Wales NSW Ministry of Health)
+  secondary: false
+  topics:
+  - cost-access
+  - statistics
+  enabled: true
+- id: dhswa-emergency
+  source_org: Dental Health Services WA
+  url: https://www.dental.wa.gov.au/Emergency/
+  jurisdiction: WA
+  licence: © Dental Health Services, Government of Western Australia; no reuse licence published
+  secondary: false
+  topics:
+  - emergency-trauma
+  - cost-access
+  enabled: true
+- id: dhswa-general-dental-service
+  source_org: Dental Health Services WA
+  url: https://www.dental.wa.gov.au/Dental-Services/General-Dental-Service/
+  jurisdiction: WA
+  licence: © Dental Health Services, Government of Western Australia; no reuse licence published
+  secondary: false
+  topics:
+  - cost-access
+  enabled: true
+- id: sadental-emergency-first-aid
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/advice/dental-emergency-first-aid
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - emergency-trauma
+  enabled: true
+- id: sadental-emergency-dental-care
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/emergency
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - emergency-trauma
+  - cost-access
+  enabled: true
+- id: sadental-toothache-causes
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/advice/common-causes-of-toothaches
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - emergency-trauma
+  - decay
+  enabled: true
+- id: sadental-baby-teeth-teething
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/advice/baby-teeth-and-teething
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - children
+  enabled: true
+- id: sadental-dry-mouth
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/advice/dry-mouth
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - dry-mouth
+  enabled: true
+- id: sadental-adult-appointments
+  source_org: SA Dental
+  url: https://www.dental.sa.gov.au/advice/dental-appointments-adults
+  jurisdiction: SA
+  licence: © Government of South Australia (SA Dental); no reuse licence published
+  secondary: false
+  topics:
+  - cost-access
+  enabled: true
+- id: who-oral-health
+  source_org: World Health Organization
+  url: https://www.who.int/news-room/fact-sheets/detail/oral-health
+  jurisdiction: INT
+  licence: © WHO; website extracts may be reproduced for research/private study, not commercial use
+  secondary: true
+  topics:
+  - statistics
+  - other
+  enabled: true
+- id: who-sugars-dental-caries
+  source_org: World Health Organization
+  url: https://www.who.int/news-room/fact-sheets/detail/sugars-and-dental-caries
+  jurisdiction: INT
+  licence: © WHO; website extracts may be reproduced for research/private study, not commercial use
+  secondary: true
+  topics:
+  - decay
+  - statistics
+  enabled: true
+- id: who-noma
+  source_org: World Health Organization
+  url: https://www.who.int/news-room/fact-sheets/detail/noma
+  jurisdiction: INT
+  licence: © WHO; website extracts may be reproduced for research/private study, not commercial use
+  secondary: true
+  topics:
+  - other
+  enabled: true

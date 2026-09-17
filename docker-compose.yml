@@ -1,0 +1,59 @@
+# DentalCare AU — full stack.
+#   docker compose up -d qdrant                       # dev: vector DB only
+#   docker compose --profile local-llm up -d          # + Ollama (GPU if available)
+#   docker compose --profile full up -d --build       # api + frontend + qdrant
+name: dentalcare-au
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    ports: ["6333:6333"]
+    volumes: [qdrant_data:/qdrant/storage]
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:0.5.4
+    profiles: ["local-llm", "full"]
+    ports: ["11434:11434"]
+    volumes: [ollama_data:/root/.ollama]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    profiles: ["full"]
+    env_file: [.env]
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      OLLAMA_BASE_URL: http://ollama:11434
+      DATA_DIR: /app/data
+      LOG_DIR: /app/data/logs
+      HF_HOME: /models/hf
+    volumes:
+      - ./data:/app/data
+      - hf_cache:/models/hf
+    ports: ["8000:8000"]
+    depends_on: [qdrant]
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    profiles: ["full"]
+    ports: ["8080:80"]
+    depends_on: [api]
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  ollama_data:
+  hf_cache:
