@@ -38,7 +38,7 @@ export function ChatView({ messages, waiting, tts, onRetry, onPickStarter, statu
   }, [lastId, lastRole, waiting])
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-4">
+    <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:py-4">
       {statusNotice ? (
         <p
           role="status"
@@ -51,7 +51,7 @@ export function ChatView({ messages, waiting, tts, onRetry, onPickStarter, statu
       {messages.length === 0 ? (
         <StarterQuestions onPick={onPickStarter} disabled={waiting} />
       ) : (
-        <ol ref={listRef} aria-label="Conversation" className="space-y-5">
+        <ol ref={listRef} aria-label="Conversation" className="space-y-4">
           {messages.map((m) => (
             <li key={m.id} data-message-id={m.id} className="scroll-mt-4">
               <MessageBubble message={m} tts={tts} busy={waiting} onRetry={onRetry} />

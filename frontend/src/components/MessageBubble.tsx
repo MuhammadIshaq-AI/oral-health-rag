@@ -72,7 +72,7 @@ function AssistantBubble({ message, tts }: { message: Extract<ChatMessage, { rol
       <article
         ref={containerRef}
         aria-label="DentalCare AU answer"
-        className="w-full max-w-[94%] space-y-4 rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-4 text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+        className="w-full max-w-[94%] space-y-3 rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
       >
         <TriageAlert triage={response.triage} />
 

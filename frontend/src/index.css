@@ -6,19 +6,22 @@
  * Root font size drives every rem-based Tailwind size, so the whole interface
  * (text, spacing, tap targets) scales with the user's chosen size.
  * Percentages respect the browser's own default font-size setting.
- *   standard   = 18px  (112.5% of 16px)
- *   large      = 21px  (131.25%)
- *   extra large = 24px (150%)
+ *   standard    = 16px (100% of the browser default)
+ *   large       = 19px (118.75%)
+ *   extra large = 22px (137.5%)
+ * Standard is a comfortable desktop size; the two larger steps exist for older
+ * users and anyone who needs bigger text, and the mic button and other tap
+ * targets keep px floors so they stay large enough at every step.
  */
 @layer base {
   html.fs-standard {
-    font-size: 112.5%;
+    font-size: 100%;
   }
   html.fs-large {
-    font-size: 131.25%;
+    font-size: 118.75%;
   }
   html.fs-xlarge {
-    font-size: 150%;
+    font-size: 137.5%;
   }
 
   html,

@@ -146,7 +146,7 @@ export function Composer({
             placeholder="Type your question…"
             aria-describedby="composer-hint"
             enterKeyHint="send"
-            className="block min-h-14 w-full resize-none rounded-2xl border-2 border-slate-400 bg-white px-4 py-3 text-[max(18px,1rem)] leading-snug text-slate-900 placeholder:text-slate-600 focus:border-teal-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-teal-300"
+            className="block min-h-14 w-full resize-none rounded-2xl border-2 border-slate-400 bg-white px-4 py-3 text-[max(16px,1rem)] leading-snug text-slate-900 placeholder:text-slate-600 focus:border-teal-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-teal-300"
           />
         </div>
         <button
