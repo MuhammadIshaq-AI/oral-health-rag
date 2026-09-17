@@ -26,7 +26,9 @@ RetrievalMode = Literal["dense", "hybrid", "rerank"]
 class LLMConfig(BaseModel):
     """Which language model to call and how."""
 
-    provider: Literal["ollama", "openai_compat", "gemini", "openai", "anthropic", "fake"] = "ollama"
+    provider: Literal[
+        "ollama", "openai_compat", "gemini", "openai", "openrouter", "anthropic", "fake"
+    ] = "ollama"
     model: str = "qwen2.5:7b-instruct"
     base_url: str | None = None
     temperature: float = 0.0

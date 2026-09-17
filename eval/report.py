@@ -69,6 +69,11 @@ def render(results: dict[str, Any]) -> str:
             "",
             f"In-scope questions: {rag['n_in_scope']}. Claims are judged sentence-by-sentence against the "
             "passages retrieved for the question (fixed rubric, `prompts/judge_v1.md`).",
+            ""
+            if not str(meta.get("judge_model", "")).endswith(str(meta.get("model", "\0")))
+            else "\n> The judge is the same model that wrote the answers, so faithfulness here is "
+            "inflated by self-preference bias. Re-run with a different `judge_llm` for a cleaner "
+            "estimate.",
             "",
             "| Metric | RAG (grounded) | Baseline (same LLM, no retrieval) |",
             "|---|---:|---:|",

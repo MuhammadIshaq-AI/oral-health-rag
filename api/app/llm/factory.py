@@ -9,9 +9,10 @@ from app.llm.providers import AnthropicClient, FakeClient, OllamaClient, OpenAIC
 
 GEMINI_OPENAI_BASE = "https://generativelanguage.googleapis.com/v1beta/openai"
 OPENAI_BASE = "https://api.openai.com/v1"
+OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 
 #: Providers that send data off the local machine (surfaced in /api/health and the UI).
-REMOTE_PROVIDERS = frozenset({"gemini", "openai", "anthropic", "openai_compat"})
+REMOTE_PROVIDERS = frozenset({"gemini", "openai", "openrouter", "anthropic", "openai_compat"})
 
 
 def make_llm(cfg: LLMConfig, settings: Settings | None = None) -> LLMClient:
@@ -37,6 +38,15 @@ def make_llm(cfg: LLMConfig, settings: Settings | None = None) -> LLMClient:
                 cfg.base_url or OPENAI_BASE,
                 s.openai_api_key,
                 "openai",
+                cfg.seed,
+                cfg.timeout_s,
+            )
+        case "openrouter":
+            return OpenAICompatClient(
+                cfg.model,
+                cfg.base_url or OPENROUTER_BASE,
+                s.openrouter_api_key,
+                "openrouter",
                 cfg.seed,
                 cfg.timeout_s,
             )
